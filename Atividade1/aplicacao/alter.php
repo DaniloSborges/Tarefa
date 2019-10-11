@@ -9,12 +9,12 @@ require_once('functions.php');
 $json = file_get_contents('php://input');
 $obj = json_decode($json);
 $array = [];
-$array = [$obj->nome, $obj->valor, $obj->desconto, $obj->categoria, $obj->busca];
+$array = [$obj->nome, $obj->cpf, $obj->login, $obj->senha, $obj->busca];
 //$array = (array) $obj;
 //$array = json_decode($obj, true);
 //$resultado = var_dump($array);
 
-$resultado = alterProdutosPhp($conection, $array);
+$resultado = alterClientePhp($conection, $array);
 
 
 if($resultado) {
